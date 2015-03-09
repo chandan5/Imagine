@@ -1,0 +1,65 @@
+table {
+    font-family: DejaVu Serif;
+}
+
+#include_block {
+    position: absolute;
+    top: 45%;
+    left: 25%;
+}
+
+.w2p_fc {
+    display: none;
+}
+
+input {
+    position: relative;
+    margin-left: 8%;
+    padding: 2px;
+    font-size: 1.3em;
+}
+
+.w2p_fl {
+    text-align: right;
+}
+
+td {
+    font-family: Ubuntu;
+    font-size: 1.4em;
+}
+
+.w2p_fw {
+    text-align: left;
+}
+
+input:focus {
+    border-color: blue;
+    border: 2px solid #800080;
+}
+
+#submit_record__row > td:nth-child(2) {
+    text-align: right;
+}
+
+#auth_user_remember__row {
+    display: none;
+}
+
+#error_message {
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    margin-top: -15%;
+    color: red;
+    font-size: xx-large;
+    text-align: center;
+}
+
+#signuplink {
+    margin-top: 2%;
+    text-align: center;
+    width: 100%;
+    height: 20%;
+    font-size: 1.4em;
+    font-family: Ubuntu;
+}

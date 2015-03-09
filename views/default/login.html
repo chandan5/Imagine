@@ -1,0 +1,12 @@
+{{extend 'myLayout.html'}}
+<link href="{{=URL('static', 'css/login.css')}}" rel='stylesheet' type='text/css' />
+<script>
+    $(document).ready(
+      function() {
+        $('#auth_user_username').focus();
+      }
+    );
+</script>
+<div id="error_message">{{=response.flash or '' or inp}}</div>
+{{=form}}
+<div id="signuplink">Please <a href="{{=URL('default', 'register')}}" title="Signup">signup</a> if you don't have an existing account</div>

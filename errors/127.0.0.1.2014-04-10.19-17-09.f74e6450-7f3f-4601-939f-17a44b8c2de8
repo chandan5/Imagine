@@ -1,0 +1,21 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.TypeError'> insert() takes exactly 1 argument (5 given)"
+p3
+sS'layer'
+p4
+S'/home/abhineet/web2py/applications/imagine/controllers/logo.py'
+p5
+sS'code'
+p6
+S'@auth.requires_login()\ndef index():\n    username = session.auth.user.username\n    row = db(db.auth_user.username == username).select()\n    return dict(row = row[0])\n\n@auth.requires_login()\ndef saveimage():\n    title = request.vars.title\n    imgstring = request.vars.imgstring\n    imgtype = request.vars.imgtype\n    db.user_sketches.insert(session.auth.user.username, imgtype, imgstring, title)\n    return "True"\nresponse._vars=response._caller(saveimage)\n'
+p7
+sS'snapshot'
+p8
+(dp9
+sS'traceback'
+p10
+S'Traceback (most recent call last):\n  File "/home/abhineet/web2py/gluon/restricted.py", line 217, in restricted\n    exec ccode in environment\n  File "/home/abhineet/web2py/applications/imagine/controllers/logo.py", line 14, in <module>\n  File "/home/abhineet/web2py/gluon/globals.py", line 385, in <lambda>\n    self._caller = lambda f: f()\n  File "/home/abhineet/web2py/gluon/tools.py", line 3259, in f\n    return action(*a, **b)\n  File "/home/abhineet/web2py/applications/imagine/controllers/logo.py", line 12, in saveimage\n    db.user_sketches.insert(session.auth.user.username, imgtype, imgstring, title)\nTypeError: insert() takes exactly 1 argument (5 given)\n'
+p11
+s.

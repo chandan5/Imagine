@@ -1,0 +1,71 @@
+Application Name: imagine
+
+Aim:
+
+To provide the users a platform to create images using LOGO (Language Oriented Graphics Oriented) and Paint.
+
+Features:
+
+LOGO:
+
+Following LOGO commands are successfully implemented:
+forward, backward, left, right, repeat, home, hideturtle, showturtle, penup, pendown, clearscreen, clean, clearconsole, setpencolor, setpensize, penpaint
+
+The following command works but is not efficient: penerase
+
+More to do: provide the user a way to define his own functions using TO and END
+
+Paint:
+
+The following tools in paint are successfully implemented:
+line, brush, rectangle, ellipse, eraser, select & move, cut, copy, paste, undo, redo, clearscreen
+
+There are around 40 colors provided in the pallete which user can select and 10 radius sizes for line, brush and eraser.
+
+Note: There is a save button and a download button provided in both the applications.
+
+Users Profile Page:
+
+The users profile page shows his profile details on the left side, which are editable.
+All his graphic creations, both in LOGO and Paint are displayed in separate sections.
+All the images can be viewed, downloaded and opened/edited in any application (LOGO or Paint) from this page.
+The images are displayed, sorted in order of Last Created.
+
+How to Start?
+
+The user on opening the homepage can find a link to register/signup for an account on the website.
+He has to login to use the applications provided.
+On logging in, the user profile page will appear.
+There is a navigation bar to facilitate navigation through applications and user profile, it also provides the Logout Button.
+
+LOGO
+
+The LOGO page has a console type interface, where the user has to type in LOGO commands to create graphical images.
+Invalid syntax or commands are reported.
+You can also view the previous commands and access them by using up/down arrow keys.
+The list of commands has already been provided.
+
+Paint
+
+The Brush tool is selected by default, the user can click on any tool to use it.
+The colors can be selected by clicking on the color boxes in the pallete, you can view the color with its name and hexcode after clicking.
+The radius/line width can be set by a slider ranging from 1-10
+
+Note: The clearscreen button deletes any undo/redo history
+
+The Save Button adds the current view of the image to your account depending on the application, it prompts for a title to the image.
+On success, an 'Image saved!' prompt is generated.
+The Download Button downloads the current view of the image to your computer, it does not save the image in your account.
+
+Developer Team:
+Name: V
+Members:
+    Abhineet Jain   
+    Chandan Kharbanda
+    
+Link to BitBucket Repository: https://AbhiJ@bitbucket.org/AbhiJ/imagine.git
+
+Languages Used:
+JavaScript (jquery.js, string.js)
+
+Developed with web2py.

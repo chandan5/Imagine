@@ -1,0 +1,47 @@
+table {
+    font-family: Ubuntu;
+}
+
+#include_block {
+    position: absolute;
+    top: 35%;
+    left: 25%;
+}
+
+input {
+    position: relative;
+    margin-left: 8%;
+    padding: 2px;
+    font-size: 1.3em;
+}
+
+.w2p_fl {
+    text-align: right;
+}
+
+td {
+    font-family: Ubuntu;
+    font-size: 1.4em;
+}
+
+.w2p_fw {
+    text-align: left;
+}
+
+input:focus {
+    border-color: blue;
+    border: 2px solid #800080;
+}
+
+#submit_record__row > td:nth-child(2) {
+    text-align: right;
+}
+
+#submit_record__row > td:nth-child(2) > input:nth-child(1):focus {
+    border: none;
+}
+
+#auth_user_profile_picture__row
+{
+    display: none;
+}

@@ -1,0 +1,8 @@
+{{extend 'myLayout.html'}}
+<link rel="stylesheet" type="text/css" href="{{=URL('static', 'css/editprofile.css')}}" />
+<script>
+    $(document).ready(function() {
+        $('#auth_user_first_name').focus()
+    });
+</script>
+{{=form}}

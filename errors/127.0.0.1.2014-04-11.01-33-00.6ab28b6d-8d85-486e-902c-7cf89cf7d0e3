@@ -1,0 +1,21 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.AttributeError'> 'List' object has no attribute 'edit'"
+p3
+sS'layer'
+p4
+S'/home/abhineet/web2py/applications/imagine/controllers/logo.py'
+p5
+sS'code'
+p6
+S'@auth.requires_login()\ndef index():\n    editimage = request.args.edit\n    print request.args\n    username = session.auth.user.username\n    row = db(db.auth_user.username == username).select()\n    return dict(row = row[0], editimage = editimage)\n\n@auth.requires_login()\ndef saveimage():\n    title = request.vars.title\n    imgstring = request.vars.imgstring\n    imgtype = request.vars.imgtype\n    print title, imgstring, imgtype\n    db.user_sketches.insert(username=session.auth.user.username, imgtype=imgtype, datastring=imgstring, title=title)\n    return "True"\nresponse._vars=response._caller(index)\n'
+p7
+sS'snapshot'
+p8
+(dp9
+sS'traceback'
+p10
+S'Traceback (most recent call last):\n  File "/home/abhineet/web2py/gluon/restricted.py", line 217, in restricted\n    exec ccode in environment\n  File "/home/abhineet/web2py/applications/imagine/controllers/logo.py", line 17, in <module>\n  File "/home/abhineet/web2py/gluon/globals.py", line 385, in <lambda>\n    self._caller = lambda f: f()\n  File "/home/abhineet/web2py/gluon/tools.py", line 3259, in f\n    return action(*a, **b)\n  File "/home/abhineet/web2py/applications/imagine/controllers/logo.py", line 3, in index\n    editimage = request.args.edit\nAttributeError: \'List\' object has no attribute \'edit\'\n'
+p11
+s.

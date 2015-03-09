@@ -1,0 +1,18 @@
+table {
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    font-size: 1.2em;
+    font-family: Ubuntu;
+}
+
+td {
+    color: purple;
+    text-align: center;
+    padding: 10px 10px;
+}
+
+img {
+    box-shadow: 0 0 5px 5px plum;
+    width: 7em;
+}

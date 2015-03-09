@@ -1,0 +1,52 @@
+{{extend 'profileLayout.html'}}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mini Logo v0.1</title>
+        <link href={{=URL('static', 'css/logo.css')}} rel="stylesheet" type="text/css"/>        
+        <script src={{=URL('static', 'js/logo3.js')}}></script>
+        <link rel="shortcut icon" href="{{=URL('static', 'images/homeImage2.png')}}" />
+        <script src={{=URL('static', 'js/jquery.js')}}></script>
+        <script src={{=URL('static', 'js/string.js')}}></script>
+        {{include 'web2py_ajax.html'}}
+    </head>
+    <body>
+        <a id="download_link" title="Download Image" download="image.png">
+            <img alt="downloadimage" id="downloadimage" src="{{=URL('static', 'images/arrow_black.svg')}}" />
+        </a>
+        <a title="Save Image">
+            <img alt="saveimage" id="saveimg" src="{{=URL('static', 'images/floppy.svg')}}" />
+        </a>
+        <div id="canvasdiv">
+            <canvas id="canvas" width="1280" height="380"></canvas>
+            {{if editimage != None and editimage != '':}}
+            <img src="{{=editimage}}" alt="tempimg" style="display: none;"/>
+            {{pass}}
+        </div>
+        <div id="canvasdiv2">
+            <canvas id="canvas2" width="1280" height="380"></canvas>
+        </div>
+        <div id="selectmode">
+            <div id="consolelink" class="nav">
+                <img id="consoleimg" class="linkimg" src="{{=URL('static', 'images/console.svg')}}" alt="console"/>
+                <div class="textnav">Console</div>
+            </div>
+            <div class="nav" id="editorlink">
+                <img id="editorimg" class="linkimg" src="{{=URL('static', 'images/editor.svg')}}" alt="editor" />
+                <div class="textnav">Editor</div>
+            </div>
+        </div>
+        <div id="console" width="1280" height="200">
+            <div id="textarea"></div>
+            <div id="consoleip">
+                <div id="arrow">>></div>
+                <form id="consoleinput">
+                  <textarea rows=10 id="editor" spellcheck="false"></textarea>
+                  <input id="ip" name="inputval" type="text" placeholder="Enter your command" autocomplete="off" />
+                  <button id="enter">Enter</button>
+                  <!--<input id="enter" type="submit" value="Enter">-->
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

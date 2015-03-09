@@ -1,0 +1,83 @@
+#navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 10%;
+    width: 100%;
+    background-color: orange;
+    background-image: -webkit-linear-gradient(top,#ffa500, #ffaa00, #ffbb00);
+    background-image: -o-linear-gradient(top,#ffa500, #ffaa00, #ffbb00);
+    background-image: -moz-linear-gradient(270deg, #ffa500, #ffaf00, #ffbf00);
+    background-image: linear-gradient(top,#ffa500, #ffaa00, #ffbb00);
+    background-repeat: repeat-x;
+    z-index: 10;
+}
+
+#sitename {
+    float: left;
+//    position: relative;
+    //bottom: 0px;
+    height: 100%;
+    width: 20%;
+    font-family: Ubuntu;
+    font-size: 4em;
+    font-weight: 500;
+}
+
+#searchbox {
+    float: left;
+    top: 43%;
+    position: relative;
+    height: 67%;
+    width: 50%;
+    font-family: Ubuntu;
+    font-size: 2.5em;
+    color: white;
+}
+
+#logoutdiv {
+    float: left;
+    border: 1px solid;
+    height: 100%;
+    width: 9%;
+}
+
+.normal {
+    margin-top: 3%;
+    float: left;
+    color: white;
+}
+
+.change {
+    margin-top: 3%;
+    color: purple;
+    float: left;
+}
+
+#left_margin {
+    margin-left: 7%;
+}
+
+#links {
+    width: 29%;
+    height: 100%;
+    font-family: Ubuntu;
+    font-size: x-large;
+    float: left;
+}
+
+.link_class {
+    margin-top: 6%;
+    padding: 4px;
+    padding-left: 23px;
+    float: left;
+}
+
+.link_class > a {
+    text-decoration: none;
+    color: purple;
+}
+
+.link_class > a:hover {
+    color: white;
+}

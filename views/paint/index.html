@@ -1,0 +1,102 @@
+{{extend 'profileLayout.html'}}
+<html>
+<head>
+	<title>{{=row.first_name.capitalize()+row.last_name.capitalize()}}</title>
+	<script src="{{=URL('static', 'js/paint.js')}}"></script>
+	<link href="{{=URL('static', 'css/paint.css')}}" rel="stylesheet" type="text/css" />
+	{{include 'web2py_ajax.html'}}
+	
+</head>
+<body>
+	<!--<div id="form" class="top">
+		<form id="form1">
+		x: <input class="numberip" id="xip" size=1 type="number" placeholder="Enter x"/>
+		y: <input class="numberip" id="yip" size=1 type="number" placeholder="Enter y"/>
+		Color: <input list="color_list" id="col" name="color" size=8 placeholder="Enter color">
+		<datalist id="color_list">
+			{{for i in r:}}
+			<option value={{=i.Color+'('+i.Code+')'}}></option>
+			{{pass}}
+		</datalist>
+		Radius: <input id ="rad" size=8 type="number" placeholder="Enter radius"/>
+		<input type="submit" name="submit" value="Submit" />
+		</form>
+	</div>-->
+	<datalist id="color_list">
+			{{for i in r:}}
+			<option value={{=i.Color+'('+i.Code+')'}}></option>
+			{{pass}}
+	</datalist>
+	<!--<div id="info" class="top" style="font-weight: bold;">
+		x: <span id="x" class="rightmargin"></span>y: <span id="y" class="rightmargin"></span>Color: <span id="color" class="rightmargin"></span>Radius: <span id="radius" class="rightmargin"></span>
+	</div>-->
+	<div id="toolbar">
+		<div id="selectbutton" class="top">
+			<img src="{{=URL('static', 'images/select.svg')}}" id="select" alt="select"  class="highlight"/>
+		</div>
+		<div id="brushbutton" class="top">
+			<img src="{{=URL('static', 'images/brush.svg')}}" id="brush" alt="brush"  class="highlight"/>
+		</div>
+		<div id="rectbutton" class="top">
+			<img src="{{=URL('static', 'images/rectangle.svg')}}" id="rect" alt="rectangle" class="highlight"/>
+		</div>
+		<div id="linebutton" class="top">
+			<img src="{{=URL('static', 'images/line.svg')}}" id="line" alt="line"  class="highlight"/>
+		</div>
+		<div id="ovalbutton" class="top">
+			<img src="{{=URL('static', 'images/ellipse.svg')}}" id="oval" alt="oval"  class="highlight"/>
+		</div>
+		<div id="eraserbutton" class="top">
+			<img src="{{=URL('static', 'images/eraser.svg')}}" id="eraser" alt="eraser"  class="highlight"/>
+		</div>
+		<div id="undobutton" class="top">
+			<img src="{{=URL('static', 'images/undo.svg')}}" id="undo" alt="undo" class="tool"/>
+		</div>
+		<div id="redobutton" class="top">
+			<img src="{{=URL('static', 'images/redo.svg')}}" id="redo" alt="redo" class="tool"/>
+		</div>
+		<div id="cutbutton" class="top">
+			<img src="{{=URL('static', 'images/cut.svg')}}" id="cut" alt="cut" class="tool"/>
+		</div>
+		<div id="copybutton" class="top">
+			<img src="{{=URL('static', 'images/copy.svg')}}" id="copy" alt="copy" class="tool"/>
+		</div>
+		<div id="pastebutton" class="top">
+			<img src="{{=URL('static', 'images/paste.svg')}}" id="paste" alt="paste" class="tool"/>
+		</div>
+		<div id="button" class="top">
+			<img src="{{=URL('static', 'images/refresh.svg')}}" id="refresh" alt="refresh" class="tool"/>
+		</div>
+		<div id="savebutton" class="top">
+			<img src="{{=URL('static', 'images/floppy.svg')}}" id="save" alt="save" class="tool"/>
+		</div>
+		<div id="dwnldbutton" class="top">
+			<a id="download_link" title="Download Image" download="image.png">
+				<img src="{{=URL('static', 'images/arrow_black.svg')}}" id="download" alt="download" class="tool"/>
+			</a>
+		</div>
+	</div>
+	<div id="canvasdiv">
+		<canvas id="draw" width="1280" height="380" draggable=true></canvas>
+		{{if editimage != None and editimage != '':}}
+		<img src="{{=editimage}}" alt="tempimg" style="display: none;"/>
+		{{pass}}
+	</div>
+	<div id="palette">
+		<div id="selected"></div>
+		<div id="showcol"><span id="showcl" style="">Black</span><br><span id="showhx">#000000</span></div>
+		<div id="colors">
+			{{for i in l:}}
+			<div class="palcol" id={{=i}}></div>
+			{{pass}}
+		</div>
+	</div>
+	<div id="sliders">
+		<form id="radius_form" oninput="radiusout.value=radius=parseInt(rad.value);">
+			1<input type="range" value="4" min="1" max="10" step="1" id="rad"/>10
+			<span>Radius: </span>
+			<output name="radiusout" id="radius_out" for="rad">4</output>
+		</form>
+	</div>
+</body>
+</html>

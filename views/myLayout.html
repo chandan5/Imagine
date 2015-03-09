@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Imagine</title>
+    <link rel="stylesheet" type="text/css" href="{{=URL('static', 'css/myLayout.css')}}">
+    <link rel="shortcut icon" href="{{=URL('static', 'images/homeImage2.png')}}" />
+    <script src="{{=URL('static', 'js/home.js')}}"></script>
+    <script src="{{=URL('static', 'js/jquery.js')}}"></script>
+    <script>
+      $(document).ready(function() {
+        $('#subhead').slideDown(5000);
+      });
+    </script>
+    {{include 'web2py_ajax.html'}}
+  </head>
+  <body>
+    <div id="heading">
+      <div id="titleimg" class="title">im<span id="gspan">g</span></div>
+      <div id="sitetitle" class="title"><div class="change">im</div><div class="normal">a</div><div class="change">g</div><div class="normal">ine</div></div>
+    </div>
+    <div id="subhead">{{=page}}</div>
+    <div id="include_block">
+        {{include}}
+    </div>
+  </body>
+</html>

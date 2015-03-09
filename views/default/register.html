@@ -1,0 +1,12 @@
+{{extend 'myLayout.html'}}
+<link href="{{=URL('static', 'css/register.css')}}" rel='stylesheet' type='text/css' />
+{{=form}}
+<script>
+    $(document).ready(
+      function() {
+        $('#auth_user_first_name').focus();
+        but = $('#submit_record__row > td:nth-child(2) > input:nth-child(1)')
+        but.val('signup');
+      }
+    );
+</script>

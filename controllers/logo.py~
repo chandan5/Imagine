@@ -1,0 +1,32 @@
+import time
+import re
+
+def index():
+    return dict()
+
+def retrepeat(instr):
+    #strlist=instr.split()
+    instr = instr.strip()
+    #instr = reduce(lambda x, y: x+y, strlist)
+    #para = re.findall(r"(repeat)(\s+)(.+)\s*(.*)\s*", instr)
+                      #[{' '}*(.*){' '}*]]', instr)
+    #print para
+    #checkbracket = re.findall(r"(repeat\s*\d\[*)", instr)
+    #print checkbracket
+    para = re.findall(r"\s*(\w+)\s*(\d*)\s*\[*\s*(.*)\s*\]*\s*", instr)
+    print para
+    if(para[0][2] != ""):
+        if para[0][2][-1] == ']':
+            retrepeat(para[0][2][:-1])
+        else:
+            retrepeat(para[0][2])
+            
+
+if __name__ == '__main__':
+    retrepeat("repeat  4[repeat 5[fd 10 rt 90]fd 10]") #repeat  6 [fd 45 rt 90]
+    retrepeat("fd 10")
+    retrepeat("pu")
+    retrepeat("fd10")
+    retrepeat("repeat 4 []fd 10 rt 90")
+    retrepeat("repeat 4 [fd] 10")
+    retrepeat("fd rt")

@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>{{=row.first_name.capitalize()+' '+row.last_name.capitalize()}}</title>
+        <link rel="stylesheet" type="text/css" href="{{=URL('static', 'css/profileLayout.css')}}" />
+        <link rel="shortcut icon" href="{{=URL('static', 'images/homeImage2.png')}}" />
+        {{include 'web2py_ajax.html'}}
+    </head>
+    <body>
+        <div id="navbar">
+            <div id="sitename"><div class="change" id="left_margin">im</div><div class="normal">a</div><div class="change">g</div><div class="normal">ine</div></div>
+            <div id="searchbox">{{=row.first_name.lower()}}</div>
+            <div id="links">
+                <div id="pro_link" class="link_class"><a href="http://127.0.0.1:8000/imagine/default/profile" title="Profile">Profile</a></div>
+                <div id="logo_link" class="link_class"><a href="http://127.0.0.1:8000/imagine/logo/index" title="Logo">Logo</a></div>
+                <div id="paint_link" class="link_class"><a href="http://127.0.0.1:8000/imagine/paint/index" title="Paint">Paint</a></div>
+                <div id="logout_link" class="link_class"><a href="http://127.0.0.1:8000/imagine/default/user/logout" title="Logout">Logout</a></div>
+            </div>
+        </div>
+        <div id="include_block">
+            {{include}}
+        </div>
+    </body>
+</html>

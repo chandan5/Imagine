@@ -1,0 +1,102 @@
+{{extend 'profileLayout.html'}}
+<link href="{{=URL('static', 'css/profile.css')}}" rel="stylesheet" type="text/css" />
+<script src="{{=URL('static', 'js/profile.js')}}"></script>
+<div id="profile">
+    <div id="propic">
+        {{if row.profile_picture == None or row.profile_picture == '':}}
+        <img src="../static/images/default_pro_pic.png" alt="Profile Picture" id="defaultdp" />
+        <div id="editonly">
+            <a href="{{=URL('default', 'profilepicture')}}">
+                <img src="{{=URL('static', 'images/pencil_for_pic.svg')}}" alt="edit" class="editpencil"/>
+                <span id="editpic">Edit</span>
+            </a>
+        </div>
+        {{else:}}
+        <img src="http://127.0.0.1:8000/imagine/default/download/{{=row.profile_picture}}" alt="Profile Picture" id="uploaddp" />
+        <div id="downlddiv" class="combinetext">
+            <a href="http://127.0.0.1:8000/imagine/default/download/{{=row.profile_picture}}">
+                <img src="{{=URL('static', 'images/arrow.svg')}}" alt="download" class="editpencil" />
+                <span id="downldpic">Download</span>
+            </a>
+        </div>
+        <div id="editdiv" class="combinetext">
+            <a href="{{=URL('default', 'profilepicture')}}">
+                <img src="{{=URL('static', 'images/pencil_for_pic.svg')}}" alt="edit" class="editpencil" />
+                <span id="editpic">Edit</span>
+            </a>
+        </div>
+        {{pass}}
+    </div>
+    <div id="detail">
+            <div class="center_align">{{=row.first_name.capitalize()+' '+row.last_name.capitalize()}}</div>
+            <div class="center_align">{{=row.email}}</div>
+            <div class="center_align">{{=row.username}}</div>
+            <div class="center_align">{{=row.dob}}</div>
+            <div class="center_align">{{=row.gender}}</div>
+    </div>
+    <div id="editbutton">
+        <a href="{{=URL('default', 'editprofile')}}">
+            <img src="{{=URL('static', 'images/pencil.svg')}}" alt="edit" />
+            <span id="edittext">Edit</span>
+        </a>
+    </div>
+    <div id="rule"></div>
+</div>
+
+<div id="mainbody">
+    <div id="logotab">
+        <div id="headlogo" class="headings">LOGO</div>
+        <div id="imagelistlogo" class="listofimages">
+            {{for i in logoimages:}}
+            <div class="image_container">
+                <img class="logoimage" src="{{=i.datastring}}" alt="{{=i.title.replace(' ', '')}}"/>
+                <div class="download_title" id="{{=i.title.replace(' ', '')}}">                    <div id="linklist">
+                        <a title="Edit using Logo" class='edit_redirect_logo' name='{{=i.datastring}}' href="#">
+                            <img alt="editimage logo" src="{{=URL('static', 'images/triangle.svg')}}" class="editpencil" id="trianglelogo"/>
+                        </a>
+                        <a title="Edit using Paint" class='edit_redirect_paint' name='{{=i.datastring}}' href="#">
+                            <img alt="editimage paint" src="{{=URL('static', 'images/brush_white.svg')}}" class="editpencil"/>
+                        </a>
+                        <a title="View" href="#" name="{{=i.datastring}}" target="blank" class="view_link">
+                            <img src="{{=URL('static', 'images/view.svg')}}" alt="view" class="editpencil"/>
+                        </a>
+                        <a title="Download" href="#" name="{{=i.datastring}}" class="download_link" download="{{=i.title.replace(' ', '_')}}.png">
+                            <img src="{{=URL('static', 'images/arrow.svg')}}" alt="download" class="editpencil"/>
+                        </a>
+                    </div>
+                    <div class="titledivision"><span class="titlespan" id='{{=i.datastring}}'>{{=i.title.lower()}}</span></div>
+                </div>
+            </div>
+            {{pass}}
+        </div>
+    </div>
+    <div id="painttab">
+        <div id="headpaint" class="headings">Paint</div>        
+        <div id="imagelistpaint" class="listofimages">
+            {{for i in paintimages:}}
+            <div class="image_container">
+                <img class="logoimage" src="{{=i.datastring}}" alt="{{=i.title.replace(' ', '')}}"/>
+                <div class="download_title" id="{{=i.title.replace(' ', '')}}">
+                    <div id="linklist">
+                        <a title="Edit using Logo" class='edit_redirect_logo' name='{{=i.datastring}}' href="#" >
+                            <img alt="editimage logo" src="{{=URL('static', 'images/triangle.svg')}}" class="editpencil" id="trianglelogo"/>
+                        </a>
+                        <a title="Edit using Paint" class='edit_redirect_paint' name='{{=i.datastring}}' href="#">
+                            <img alt="editimage paint" src="{{=URL('static', 'images/brush_white.svg')}}" class="editpencil"/>
+                        </a>
+                        <a title="View" href="#" name="{{=i.datastring}}" target="blank" class="view_link">
+                            <img src="{{=URL('static', 'images/view.svg')}}" alt="view" class="editpencil"/>
+                        </a>
+                        <a title="Download" href="#" name="{{=i.datastring}}" class="download_link" download="{{=i.title.replace(' ', '_')}}.png">
+                            <img src="{{=URL('static', 'images/arrow.svg')}}" alt="download" class="editpencil"/>
+                        </a>
+                    </div>
+                    <div class="titledivision"><span class="titlespan" id='{{=i.datastring}}'>{{=i.title.lower()}}</span></div>
+                </div>
+            </div>
+            {{pass}}
+        </div>
+    </div>
+    <div id='popup'><img id='popup_img' src="blank"><div id="popupimgtitle"><span class='titleinpop'></span></div><span class='closespan'>[Close]</span></div>
+</div>
+<!--http://127.0.0.1:8000/imagine/default/download/auth_user.pro_pic.adc1a1b72f5af3df.3934343533395f313430303530393130333439343133385f3736383130383737305f6e2e6a7067.jpg-->

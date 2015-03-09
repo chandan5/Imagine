@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Imagine</title>
+    <link rel="stylesheet" type="text/css" href="{{=URL('static', 'css/home.css')}}">
+    <link rel="shortcut icon" href="{{=URL('static', 'images/homeImage2.png')}}" />
+    <script src="{{=URL('static', 'js/home.js')}}"></script>
+    <script src="{{=URL('static', 'js/jquery.js')}}"></script>
+    <script>
+      $(document).ready(function(){
+        $('#auth_user_username').focus();
+        $('#auth_user_username').attr('placeholder', 'Username');
+        $('#auth_user_password').attr('placeholder', 'Password');
+      });
+    </script>
+    {{include 'web2py_ajax.html'}}
+  </head>
+  <body>
+    <div id="heading">
+      <div id="titleimg" class="title">im<span id="gspan">g</span></div>
+      <div id="sitetitle" class="title"><div class="change">im</div><div class="normal">a</div><div class="change">g</div><div class="normal">ine</div></div>
+    </div>
+    <div id="login">
+      {{=form}}
+    </div>
+    <div id="signuplink"><a href="http://127.0.0.1:8000/imagine/default/register" title="Sign Up">Don't have an account?</a></div>
+    <div id="imagediv"><img id="flow" src="{{=URL('static', 'images/homeImage.png')}}" alt="homeImage"/></div>
+    <div id="imagediv2"><img id="imagelogo" src="{{=URL('static', 'images/homeImage2.png')}}" alt="homeImage2"/></div>
+    <div id="aboutdiv">
+      <a href="http://127.0.0.1:8000/imagine/default/aboutus" id="aboutlink">About Us</a>
+    </div>
+  </body>
+</html>

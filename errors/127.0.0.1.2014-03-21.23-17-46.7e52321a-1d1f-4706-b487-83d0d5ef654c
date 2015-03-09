@@ -1,0 +1,21 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.TypeError'> a float is required"
+p3
+sS'layer'
+p4
+S'/home/abhineet/web2py/applications/logo/controllers/logo.py'
+p5
+sS'code'
+p6
+S'import time\nimport re\n\ndef index():\n    return dict()\n\ndef wait():\n    dur = request.vars.dur\n    print dur\n    print time.sleep(dur)\n    return ""\n\n\ndef retrepeat(instr):\n    #strlist=instr.split()\n    instr = instr.strip()\n    #instr = reduce(lambda x, y: x+y, strlist)\n    #para = re.findall(r"(repeat)(\\s+)(.+)\\s*(.*)\\s*", instr)\n                      #[{\' \'}*(.*){\' \'}*]]\', instr)\n    #print para\n    #checkbracket = re.findall(r"(repeat\\s*\\d\\[*)", instr)\n    #print checkbracket\n    para = re.findall(r"\\s*(\\w+)\\s*(\\d*)\\s*\\[*\\s*(.*)\\s*\\]*\\s*", instr)\n    print para\n    if(para[0][2] != ""):\n        if para[0][2][-1] == \']\':\n            retrepeat(para[0][2][:-1])\n        else:\n            retrepeat(para[0][2])\n            \n\nif __name__ == \'__main__\':\n    retrepeat("repeat  4[repeat 5[fd 10 rt 90]fd 10]") #repeat  6 [fd 45 rt 90]\n    retrepeat("fd 10")\n    retrepeat("pu")\n    retrepeat("fd10")\n    retrepeat("repeat 4 []fd 10 rt 90")\n    retrepeat("repeat 4 [fd] 10")\n    retrepeat("fd rt")\nresponse._vars=response._caller(wait)\n'
+p7
+sS'snapshot'
+p8
+(dp9
+sS'traceback'
+p10
+S'Traceback (most recent call last):\n  File "/home/abhineet/web2py/gluon/restricted.py", line 217, in restricted\n    exec ccode in environment\n  File "/home/abhineet/web2py/applications/logo/controllers/logo.py", line 40, in <module>\n  File "/home/abhineet/web2py/gluon/globals.py", line 385, in <lambda>\n    self._caller = lambda f: f()\n  File "/home/abhineet/web2py/applications/logo/controllers/logo.py", line 10, in wait\n    print time.sleep(dur)\nTypeError: a float is required\n'
+p11
+s.
